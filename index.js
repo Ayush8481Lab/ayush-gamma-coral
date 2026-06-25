@@ -2,6 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import cors from 'cors'; // 1. Import CORS
 import canvasRoutes from './routes/canvasRoutes.js';
+import lyricsRoutes from './routes/lyricsRoutes.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,6 +14,7 @@ const PORT = 3000;
 app.use(cors());
 
 app.use('/api/canvas', canvasRoutes);
+app.use('/api/lyrics', lyricsRoutes);
 
 app.listen(PORT, function () {
     console.log("Listening on PORT: ", PORT);
