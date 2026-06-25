@@ -1,11 +1,13 @@
 import axios from 'axios';
-import { getToken } from './spotifyAuthService.js';
+
+// Replace 'YOUR_ACCESS_TOKEN_HERE' with your actual Spotify access token string
+const ACCESS_TOKEN = 'BQDwqh-vBNitf4_R_VnTeUUV0vfSx4fD3ZFgvernfj-Dj1hWVEviOasZG-gW1g7UGyEcxjRL3_pImFYlIj-oxm_DPLDMGSvMbyqEUMDEXDV_S9EQABKnqk3ttR51l4MiXLnnPiPqZ2Wf';
 
 export async function getCanvases(trackUri) {
   const { CanvasRequest, CanvasResponse } = (await import('../proto/_canvas_pb.cjs')).default;
   
   try {
-    const accessToken = await getToken();
+    const accessToken = ACCESS_TOKEN;
 
     const canvasRequest = new CanvasRequest();
     const track = new CanvasRequest.Track();
