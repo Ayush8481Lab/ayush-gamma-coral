@@ -13,6 +13,7 @@ const PORT = 3000;
 app.use(cors());
 
 app.use('/api/canvas', canvasRoutes);
+app.use('/api/lyrics', lyricsRoutes);
 
 app.listen(PORT, function () {
     console.log("Listening on PORT: ", PORT);
